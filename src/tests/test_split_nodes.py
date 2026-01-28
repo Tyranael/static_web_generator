@@ -26,3 +26,9 @@ class TestSplitNodesFct(unittest.TestCase):
                              TextNode("hello ", TextType.TEXT),
                              TextNode("world", TextType.BOLD),
                              TextNode(" !", TextType.TEXT)])
+        
+    def test_unmatched_delimiter(self):
+        txt = "Yoo **man** ! How are **you doing ?"
+        node = TextNode(txt, TextType.TEXT)
+        with self.assertRaises(Exception):
+            split_nodes_delimiter([node], "**", TextType.BOLD)
