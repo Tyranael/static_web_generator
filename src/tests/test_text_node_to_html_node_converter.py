@@ -1,7 +1,7 @@
 import unittest
 
-from htmlnode import LeafNode
-from textnode import TextType, TextNode, text_node_to_html_node
+from src.htmlnode import LeafNode
+from src.textnode import TextType, TextNode, text_node_to_html_node
 
 class TestConverter(unittest.TestCase):
     def test_invalid_text_type_raises(self):

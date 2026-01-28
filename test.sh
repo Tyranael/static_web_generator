@@ -1,1 +1,4 @@
-python3 -m unittest discover -s src
+#!/usr/bin/env bash
+set -e
+
+python -m unittest discover -s src/tests -v
