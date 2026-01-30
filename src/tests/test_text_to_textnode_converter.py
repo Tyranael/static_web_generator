@@ -31,7 +31,7 @@ class TestTextToTextNodeFct(unittest.TestCase):
             TextNode(" text", TextType.TEXT)])
     
     def test_two_different_markdown(self):
-        url = "https://nsfw.com"
+        url = "https://example.com"
         text = f"**Bold text** into [link]({url})"
         self.assertEqual(text_to_textnodes(text),[
             TextNode("Bold text", TextType.BOLD),
