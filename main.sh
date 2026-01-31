@@ -1,1 +1,2 @@
-python3 src/main.py
+source .venv/bin/activate
+python3 -m src.maingit sta
