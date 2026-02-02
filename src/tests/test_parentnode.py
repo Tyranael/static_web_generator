@@ -19,10 +19,10 @@ class TestParentNode(unittest.TestCase):
         self.assertEqual(grand_parent_node.to_html(), '<h1><div><b href="www.link.com">bold text</b></div></h1>')
     
     def test_to_html_with_two_children(self):
-        child_node_1 = LeafNode("p", "child_one")
+        child_node_1 = LeafNode("b", "child_one")
         child_node_2 = LeafNode("i", "child_two")
         parent_node = ParentNode("div", [child_node_1, child_node_2])
-        self.assertEqual(parent_node.to_html(), "<div><p>child_one</p><i>child_two</i></div>")
+        self.assertEqual(parent_node.to_html(), "<div><b>child_one</b><i>child_two</i></div>")
 
 if __name__ == "__main__":
     unittest.main()
