@@ -39,3 +39,6 @@ Thumbs.db
 
 # ---- Generated data ----
 public/
+
+# ---- Zone Identifier ----
+*:Zone.Identifier
