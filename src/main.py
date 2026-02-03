@@ -3,6 +3,8 @@ import shutil
 
 
 def copy_static(src, dest):
+    if not os.path.exists(src):
+        raise Exception("must put valid source directory")
     if os.path.exists(dest):
         shutil.rmtree(dest)
     os.mkdir(dest)
