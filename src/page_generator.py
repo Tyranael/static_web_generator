@@ -10,7 +10,6 @@ def generate_page(from_path, template_path, dest_path):
         tpl = f.read()
     
     content_html = markdown_to_html_node(md).to_html()
-    header = markdown_to_blocks(md)
     title = extract_title(header[0])
     final_temp = tpl.replace("{{ Title }}", title)
     final_html = final_temp.replace("{{ Content }}", content_html)
