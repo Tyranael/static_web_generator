@@ -13,6 +13,9 @@ def generate_page(from_path, template_path, dest_path, basepath):
     title = extract_title(md)
     final_temp = tpl.replace("{{ Title }}", title)
     final_html = final_temp.replace("{{ Content }}", content_html)
+    final_html = final_html.replace('href="/', f'href="{basepath}')
+    final_html = final_html.replace('src="/', f'src="{basepath}')
+
     with open(dest_path, "w", encoding="utf-8") as f:
             f.write(final_html)
 
