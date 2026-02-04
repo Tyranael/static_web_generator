@@ -1,6 +1,7 @@
 import os
 import shutil
 from src.page_generator import generate_pages_recursive
+import sys
 
 def copy_static(src, dest):
         if not os.path.exists(src):
@@ -14,7 +15,6 @@ def copy_static(src, dest):
             dest_path = os.path.join(dest, entry)
 
             if os.path.isfile(src_path):
-                print(f"Copying {src_path} -> {dest_path}")
                 shutil.copy(src_path, dest_path)
             else:
                 copy_static(src_path, dest_path)
@@ -22,8 +22,14 @@ def copy_static(src, dest):
 
 
 def main():
+    basepath = sys.argv[1] if len(sys.argv) > 1 else "/"
+    if not basepath.endswith("/"):
+        basepath += "/"
+    
     copy_static("static", "public")
-    generate_pages_recursive("content", "template.html", "public")
+    generate_pages_recursive("content", "template.html", "public", basepath)
+    print("basepath =", basepath)
+
 
 
 main()
