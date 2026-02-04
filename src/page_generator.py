@@ -15,7 +15,7 @@ def generate_page(from_path, template_path, dest_path):
     final_temp = tpl.replace("{{ Title }}", title)
     final_html = final_temp.replace("{{ Content }}", content_html)
     print(final_html)
-    with open(dest_path, "a", encoding="utf-8") as f:
+    with open(dest_path, "w", encoding="utf-8") as f:
             f.write(final_html)
 
 
