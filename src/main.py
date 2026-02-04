@@ -1,6 +1,6 @@
 import os
 import shutil
-from src.page_generator import generate_page
+from src.page_generator import generate_pages_recursive
 
 def copy_static(src, dest):
         if not os.path.exists(src):
@@ -23,7 +23,7 @@ def copy_static(src, dest):
 
 def main():
     copy_static("static", "public")
-    generate_page("content/md", "template.html", "public/index.html")
+    generate_pages_recursive("content", "template.html", "public")
 
 
 main()
